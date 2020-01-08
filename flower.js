@@ -1,5 +1,8 @@
-const r1 = 110;
-const r2 = 80;
+const r1 = 106;
+const r2 = r1 * (0.2 + Math.random() * 0.8);
+const colorR = 150 + Math.random() * 105;
+const colorG = 150 + Math.random() * 105;
+const colorB = 150 + Math.random() * 105;
 
 function setup() {
     createCanvas(600, 600);
@@ -36,7 +39,7 @@ class Point {
         this.x = 300 + (240-this.r1) * cos(this.s) + this.r2 * cos(this.s * (this.r1 - 240) / this.r1);
         this.y = 300 + (240-this.r1) * sin(this.s) + this.r2 * sin(this.s * (this.r1 - 240) / this.r1);
         strokeWeight(3);
-        stroke(255);
+        stroke(colorR, colorG, colorB);
         line(beforeX, beforeY, this.x, this.y);
     }
 }
