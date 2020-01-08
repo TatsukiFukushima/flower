@@ -8,6 +8,7 @@ function setup() {
 }
 
 function draw() {
+    strokeWeight(1);
     stroke(200);
     fill(0, 2);
     ellipse(300, 300, 480, 480);
@@ -21,6 +22,8 @@ class Point {
         this.r1 = r1;
         this.r2 = r2;
         this.s = 0;
+        this.x = 540 - r1 + r2;
+        this.y = 300;
     }
 
     move() {
@@ -28,9 +31,12 @@ class Point {
     }
 
     draw() {
-        noStroke();
-        fill(250);
-        ellipse(300 + (240-this.r1) * cos(this.s) + this.r2 * cos(this.s * (this.r1 - 240) / this.r1),
-            300 + (240-this.r1) * sin(this.s) + this.r2 * sin(this.s * (this.r1 - 240) / this.r1), 3, 3);
+        var beforeX = this.x;
+        var beforeY = this.y;
+        this.x = 300 + (240-this.r1) * cos(this.s) + this.r2 * cos(this.s * (this.r1 - 240) / this.r1);
+        this.y = 300 + (240-this.r1) * sin(this.s) + this.r2 * sin(this.s * (this.r1 - 240) / this.r1);
+        strokeWeight(3);
+        stroke(255);
+        line(beforeX, beforeY, this.x, this.y);
     }
 }
