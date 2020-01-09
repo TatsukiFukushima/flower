@@ -6,7 +6,7 @@ function setup() {
     } else {
         r = halfHeight * 0.9;
     }
-    r1 = r * 0.424;
+    r1 = r * (0.35 + Math.random() * 0.1);
     r2 = r1 * (0.2 + Math.random() * 0.8);
 
     createCanvas(halfWidth * 2, halfHeight * 2);
@@ -51,7 +51,7 @@ class Point {
         var beforeY = this.y;
         this.x = halfWidth + (r - this.r1) * cos(this.t) + this.r2 * cos(this.t * (this.r1 - r) / this.r1);
         this.y = halfHeight + (r - this.r1) * sin(this.t) + this.r2 * sin(this.t * (this.r1 - r) / this.r1);
-        strokeWeight(3);
+        strokeWeight(2);
         stroke(colorR, colorG, colorB);
         line(beforeX, beforeY, this.x, this.y);
     }
