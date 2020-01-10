@@ -10,7 +10,9 @@ function setup() {
     r2 = r1 * (0.2 + Math.random() * 0.8);
 
     createCanvas(halfWidth * 2, halfHeight * 2);
-    background(7);
+    background(20);
+    fill(0);
+    ellipse(halfWidth, halfHeight, r * 2, r * 2);
     point = new Point(r1, r2);
 }
 
@@ -25,8 +27,8 @@ if (Math.random() < 0.5) {
 
 function draw() {
     strokeWeight(1);
-    stroke(200);
-    fill(0, 2);
+    stroke(255);
+    fill(0, 1);
     ellipse(halfWidth, halfHeight, r * 2, r * 2);
 
     point.move();
